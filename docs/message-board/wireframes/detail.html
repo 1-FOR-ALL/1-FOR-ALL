@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>專案留言板｜單則留言（線稿）</title>
+<link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+<!-- 畫面 2／3：打開單則留言與回覆。規格見 ../SPEC.md 「2. 單則留言」 -->
+<div class="app">
+
+  <nav class="sidebar" aria-label="主選單">
+    <div class="sidebar__brand"><div>1 for ALL</div><div>企業資訊入口</div></div>
+    <div class="sidebar__nav">
+      <a class="sidebar__link" href="list.html" aria-current="page">專案管理區</a>
+    </div>
+    <div class="sidebar__spacer"></div>
+    <a class="sidebar__account" href="#settings">
+      <span class="avatar avatar--lg">王</span><span style="flex-grow:1">王小明</span><span>設定</span>
+    </a>
+  </nav>
+
+  <main class="main">
+    <header class="page-header">
+      <div class="page-tab"><h1>專案留言板</h1><span class="badge" aria-label="1 則被提及">1</span></div>
+    </header>
+
+    <div class="content">
+      <a href="list.html">← 返回留言列表</a>
+
+      <article class="box">
+        <div class="thread__head row row--between" style="align-items:flex-start">
+          <div class="grow" style="display:flex;flex-direction:column;gap:6px">
+            <div class="row" style="gap:6px"><span class="tag">置頂</span><span class="tag">@ 提及你</span></div>
+            <h2 style="margin:0;font-size:22px;font-weight:400">Q4 官網改版：首頁視覺定稿</h2>
+            <div class="meta"><span class="avatar">王</span><span>王小明</span><time datetime="2026-11-19T14:28">2026/11/19 14:28</time></div>
+          </div>
+          <!-- 只有作者本人（或管理員）看得到 -->
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <button type="button" class="btn">編輯留言</button>
+            <button type="button" class="btn">刪除留言</button><!-- 需二次確認 -->
+          </div>
+        </div>
+
+        <div class="thread__body">
+          <p>各位好，首頁 Hero 區塊已依 11/15 會議結論調整完成，這版主要改了三件事：</p>
+          <p>1. 主標改為兩行，字級放大到 40px，副標縮短成一句。<br>2. 背景改用灰藍淺底，主視覺圖片移到右側。<br>3. 「立即了解」按鈕改成黑底白字，與全站按鈕規範一致。</p>
+          <p><u>@林小安</u> 麻煩協助確認行動版排版，主圖在 390px 寬度下是否需要裁切。週五前回覆即可。</p>
+          <div class="row" style="gap:8px">
+            <a class="attach" href="#">[圖] hero-v3-desktop.png（1.2 MB）</a>
+            <a class="attach" href="#">[檔] 首頁改版說明.pdf（340 KB）</a>
+          </div>
+        </div>
+        <div class="thread__foot"><span>回覆數：15</span><span>點擊數：88</span></div>
+      </article>
+
+      <section aria-labelledby="replies-title" style="display:flex;flex-direction:column;gap:10px">
+        <h3 id="replies-title" class="section-title">回覆（15）</h3>
+
+        <!-- 回覆輸入列 -->
+        <div class="composer">
+          <span class="avatar avatar--lg">王</span>
+          <label class="sr-only" for="reply-input">輸入回覆</label>
+          <input id="reply-input" type="text" placeholder="輸入回覆，可用 @ 標記成員">
+          <button type="button" class="btn">送出</button>
+        </div>
+
+        <!-- 回覆列表：依時間舊到新 -->
+        <div class="reply">
+          <span class="avatar avatar--lg">林</span>
+          <div style="flex:1;min-width:0">
+            <div class="meta"><span>林小安</span><span>11/19 15:02</span></div>
+            <p>收到，我今天下午用手機實測後回覆。</p>
+          </div>
+        </div>
+
+        <div class="reply">
+          <span class="avatar avatar--lg">王</span>
+          <div style="flex:1;min-width:0">
+            <div class="meta">
+              <span>王小明</span><span>11/19 15:10</span>
+              <span style="flex-grow:1"></span>
+              <!-- 自己的回覆才顯示 -->
+              <button type="button" class="link-btn">編輯</button>
+              <button type="button" class="link-btn">刪除</button>
+            </div>
+            <p>補充一下：主圖原檔放在文件管理區的「官網改版 / Q4」資料夾。
+如果需要不同比例的裁切版本，直接在這裡留言就好。</p>
+          </div>
+        </div>
+
+        <div class="reply">
+          <span class="avatar avatar--lg">陳</span>
+          <div style="flex:1;min-width:0">
+            <div class="meta"><span>陳怡君</span><span>11/19 16:21</span></div>
+            <p>按鈕顏色統一很好，客戶上次也有提到 CTA 不夠明顯。</p>
+          </div>
+        </div>
+
+        <div class="reply">
+          <span class="avatar avatar--lg">張</span>
+          <div style="flex:1;min-width:0">
+            <div class="meta"><span>張志豪</span><span>11/19 17:45</span></div>
+            <p>前端這邊預計 11/21 可以上測試環境，到時候再請大家幫忙看。</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+</body>
+</html>
